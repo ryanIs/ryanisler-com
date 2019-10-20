@@ -1,0 +1,42 @@
+
+
+/* nav */
+
+.navbar {
+  background: linear-gradient(#ddf, #bbf );
+  background: #eaeaff;
+  border: none;
+  border-radius: 0px;
+}
+
+navbar navbar-default, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border: none;
+}
+
+.navbar .navbar-brand  {
+  color: #000;
+} 
+
+.navbar .navbar-nav > li > a {
+  color: #000;
+  background-color: none;
+  transition: background-color 0.7s;
+
+}
+.navbar .navbar-nav > li > a:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.navbar-brand .header-hypercube {
+  display: inline;
+  height: 20px;
+  width: auto;
+  vertical-align: none;
+}
+
+.nav-icon {
+  width: 13px;
+  height: auto;
+  display: inline;
+  margin-right: 5px;
+}

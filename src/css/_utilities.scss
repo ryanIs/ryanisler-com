@@ -1,0 +1,45 @@
+/**
+ * The utilities file is responsible for sass variables, functions, mixins, typography
+ * and normalization.
+ */
+
+// Variables
+
+$example_variable: #eee;
+
+// Mixins and Functions
+
+
+
+// Typography
+
+@font-face {
+	font-family: "Roboto";
+  src: local("Roboto"), url("../font/Robotica.woff2") format('woff2');
+}
+
+// Normalize
+
+html {
+  font-family: sans-serif; /* 1 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+body {
+  margin: 0;
+}
+
+// IE 9 display
+article,
+aside,
+footer,
+header,
+nav,
+figcaption,
+figure,
+main,
+section {
+  display: block;
+} 
