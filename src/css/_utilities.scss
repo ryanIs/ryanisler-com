@@ -10,12 +10,19 @@ $example_variable: #eee;
 // Mixins and Functions
 
 
+.hidden {
+  display: none;
+}
 
 // Typography
 
 @font-face {
 	font-family: "Roboto";
   src: local("Roboto"), url("../font/Robotica.woff2") format('woff2');
+}
+
+body {
+  font-family: "Roboto";
 }
 
 // Normalize
