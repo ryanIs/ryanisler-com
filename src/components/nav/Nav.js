@@ -7,11 +7,11 @@ function Nav(props) {
         Ryan Isler
       </div>
       <div className='right'>
-        <a href='#'>Games</a>
-        <a href='#'>Music</a>
-        <a href='#'>Art</a>
-        <a href='#'>Timeline</a>
-        <a href='#'>About</a>
+        <a href='#'><img src={require('../../img/games-nav.png')} /> Games</a>
+        <a href='#'><img src={require('../../img/music-nav.png')} /> Music</a>
+        <a href='#'><img src={require('../../img/art-nav.png')} /> Art</a>
+        <a href='#'><img src={require('../../img/timeline-nav.png')} /> Timeline</a>
+        <a href='#'><img src={require('../../img/about-nav.png')} /> About</a>
       </div>
     </div>
   )
