@@ -2,15 +2,17 @@
  * Index.js is the HOMEPAGE route. It displays the animated background and featured
  * items below that.
  */
-
 import React, { useState, useEffect } from 'react';
 import background from './Background'
 
 function Index(props) {
 
+  // Enable or disable the background effects (CPU heavy)
+  const ENABLE_BACKGROUND = false
 
+  // Display the background using useEffect (componentDidMount)
   useEffect(() => {
-    background()
+    background(ENABLE_BACKGROUND)
   }, [])
 
   return(

@@ -28,11 +28,13 @@ var cl = function(_) { return console.log(_); };
 
 var random = function(_) { return Math.floor( Math.random() * _ ); };
 
-function initCanvas() {
+function initCanvas(backgroundEnabled = true) {
+  if(backgroundEnabled) {
     canvas = document.getElementById("background-canvas"); console.log(canvas);
     ctx = canvas.getContext("2d"); 
 
     initCircles();
+  }
 }
 
 function initCircles() {
