@@ -6,6 +6,7 @@
 @import "./utilities";
 
 // Components
-@import "../components/routes/index/index";
 @import "../components/nav/nav";
-
+@import "../components/routes/index/index";
+@import "../components/routes/index/featured/featured";
+@import "../components/routes/index/featured/featuredItem/featured-item";

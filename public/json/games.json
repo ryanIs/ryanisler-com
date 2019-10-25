@@ -1,9 +1,18 @@
 {
-  "games": [
+  "Role-playing": [
     {
       "title": "Stone King",
       "releaseDate": "9/22/11",
-      "genre": "Role-playing game",
+      "platform": "Desktop, Web, Flash",
+      "description": "The King has become ill, and his evil brother is jealous of his powerful Stonite Armor. Become the next Stone King as you venture through the lands of the Kingdom of Light in search of pieces for a new set of Stonite Armor. Train your offensive and defensive skills through the battling monsters and other powerful foes!",
+      "icon": "../img/stone-king-icon.png",
+      "site": "../games/stone-king/"
+    }
+  ],
+  "Arcade": [
+    {
+      "title": "insertArcadeGame",
+      "releaseDate": "9/22/11",
       "platform": "Desktop, Web, Flash",
       "description": "The King has become ill, and his evil brother is jealous of his powerful Stonite Armor. Become the next Stone King as you venture through the lands of the Kingdom of Light in search of pieces for a new set of Stonite Armor. Train your offensive and defensive skills through the battling monsters and other powerful foes!",
       "icon": "../img/stone-king-icon.png",

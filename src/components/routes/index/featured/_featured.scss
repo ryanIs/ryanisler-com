@@ -1,0 +1,31 @@
+.featured-wrapper {
+
+  & {
+
+  }
+  
+  .featured-items {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #eef;
+    border-radius: 5px;
+    width: auto;
+    max-width: 1000px;
+    height: auto;
+    background: #fff;
+  }
+
+  .featured-items-header {
+    margin-top: 15px;
+  }
+
+  .featured-items-header h1 {
+    margin-left: 50px;
+  }
+
+  .featured-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
