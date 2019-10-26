@@ -17,7 +17,10 @@ function Games(props) {
 
       <div className='navbar-spacing' />
 
-      Refer to OBJECTIVES.TXT for what to do next :D
+      {
+        (games != null) ?
+        1 : 0 // Actually this is a genre, not a game.
+      }
       
     </div>
   )
