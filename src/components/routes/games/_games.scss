@@ -1,9 +1,42 @@
 .games-wrapper {
 
+  & {
+    width: 100%;
+    height: 100%;
+
+    color: white;
+    background: #1c0c42;
+    background: linear-gradient(#140a2a, #000000);
+  }
+
+  .genre-wrapper {
+    margin-bottom: 80px;
+  }
+
   .genre-games-wrapper {
     display: flexbox;
-    margin: 0;
     padding: 0;
+  }
+
+  .genre-header {
+    padding-top: 10px;
+    width: 100%;
+    height: 80px;
+
+    background: linear-gradient( rgba(255, 255, 255, 0.048) 0%,  rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0)  100%);
+  }
+
+  .genre-header h1 {
+  }
+
+  .games-genre-img {
+    margin: 0px 10px 5px 15px;
+    border: 1px solid #000;
+    border-radius: 10px 10px 10px 10px;
+    width: 35px;
+    height: 35px;
+    background: #eee;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
   }
 
 }

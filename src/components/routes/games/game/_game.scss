@@ -1,3 +1,39 @@
+$hoverTransition: opacity 0.4s 0.2s;
+
+$soundColorBackside: #fff;
+$soundColor: #fafafa;
+$soundColorEnabled: #bbffcc;
+$soundColorEnabledBackside: #33ff66;
+$soundColorWave: #e7e7e7;
+$soundColorWaveEnd: #fff;
+
+@mixin soundIconAttributes {
+  
+  width: 1em; 
+  height: 1em; 
+  position: relative;
+  top: 5.5px;
+  left: 5px;
+  
+  font-size: 4px;
+}
+
+@mixin makeUnselectable($disablePointer: false) {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
+  @if($disablePointer) {
+    pointer-events: none;
+  }
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .game-wrapper {
 
   & {
@@ -8,6 +44,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+
+    cursor: pointer;
   }
 
   .game-container {
@@ -15,32 +53,61 @@
     width: inherit;
     height: inherit;
     min-height: 18.585vw;
-    border: 1px solid green;
     z-index: 3;
 
     color: white;
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8);
+
+    opacity: 0;
+    transition: $hoverTransition;
   }
 
+  /* Game title */
   .game-container h1 {
+    @include makeUnselectable(true);
+
+    margin: 5px 0 0 9px;
+    font-size: 1.8em;
     font-weight: bold;
   }
 
+  /* Game release date */
   .game-container h2 {
-    margin: 0;
+    @include makeUnselectable(true);
+
+    margin: 5px 0 0 9px;
     padding: 0;
-    font-size: 1.3em;
+    font-size: 1.0em;
     font-weight: normal;
     opacity: 0.8;
   }
 
+  /* Game (short) description */
   .game-container h3 {
+    @include makeUnselectable(true);
+
     display: block;
     position: absolute;
-    left: 5px;
+    left: 9px;
     bottom: 5px;
     font-size: 1.1em;
     font-weight: normal;
+  }
+
+  .game-platform {
+    @include makeUnselectable(true);
+
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    opacity: 0.5;
+  }
+
+  .game-platform img {
+    width: inherit;
+    height: inherit;
   }
 
   .game-video-wrapper {
@@ -53,32 +120,53 @@
     background: black;
 
     opacity: 0;
-    transition: opacity 0.4s 0.2s;
+    transition: $hoverTransition;
   }
 
   .game-video-wrapper video {
     width: inherit;
     height: inherit;
 
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
 
   }
 
-  .game-platform {
-    width: 40px;
-    height: 40px;
+  .game-sound-button-wrapper {
+    width: 30px;
+    height: 30px;
     position: absolute;
-    top: 10px;
-    right: 10px;
-    opacity: 0.5;
-  }
+    bottom: 5px;
+    right: 7px;
 
-  .game-platform img {
-    width: inherit;
-    height: inherit;
+    border: 1px solid white;
+    border-radius: 20px;
+    background: transparent;
+  }
+  
+  .sound-disabled {
+    @include soundIconAttributes();
+
+    box-shadow: 0 1em 0 0 $soundColorBackside, 
+                0 2em 0 0 $soundColorBackside,
+                1em 0em 0 0 $soundColor,
+                1em 1em 0 0 $soundColor,
+                1em 2em 0 0 $soundColor,
+                1em 3em 0 0 $soundColor;
+  }
+  .sound-enabled {
+    @include soundIconAttributes();
+
+    box-shadow: 0 1em 0 0 $soundColorEnabledBackside, 
+                0 2em 0 0 $soundColorEnabledBackside,
+                1em 0em 0 0 $soundColorEnabled,
+                1em 1em 0 0 $soundColorEnabled,
+                1em 2em 0 0 $soundColorEnabled,
+                1em 3em 0 0 $soundColorEnabled,
+                3em 0em 11px 0 $soundColorWave,
+                3em 1em 11px 0 $soundColorWave,
+                3em 2em 11px 0 $soundColorWave,
+                3em 3em 11px 0 $soundColorWave,
+                4em 1em 11px 0 $soundColorWaveEnd,
+                4em 2em 11px 0 $soundColorWaveEnd;
   }
 
   @media screen and (max-width: 720px) {

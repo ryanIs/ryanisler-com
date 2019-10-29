@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect} from 'react'
+
+// TODO: Add this to a (global) React.Context
+const SOUND_ENABLED_STRING = 'sound-enabled'
+const SOUND_DISABLED_STRING = 'sound-disabled'
 
 const ICONS = {
   FLASH: '/images/games/flash-icon.png',
@@ -56,6 +60,7 @@ function getGameIcon(strPlatform) {
   
   return ICONS.FLASH
 }
+
 function getReleaseDate(ISODate) {
 
   let relDate = new Date(ISODate)
@@ -69,9 +74,14 @@ function getReleaseDate(ISODate) {
 
 function Game(props) {
 
+  useEffect(() => {
+    updateSoundMuted()
+  }, [props.soundEnabled])
+
   // Video HTML element reference for changing video
   const videoRef = React.createRef()
   const videoWrapperRef = React.createRef()
+  const gameContentRef = React.createRef()
 
   const VIDEO_NOT_PLAYING_STYLE = '0.0'
 
@@ -92,13 +102,20 @@ function Game(props) {
   // Sets game video
   const gameVideo = getGameVideo(props.game.video, props.game.gameId)
 
+  const updateSoundMuted = () => {
+    if(videoRef.current != null) {
+    videoRef.current.muted = (props.soundEnabled == SOUND_ENABLED_STRING) ? false : true
+    }
+  }
+
   const beginGameVideo = () => {
     if(videoRef.current == null) {
       return
     }
-    videoRef.current.muted = videoMuted
+    updateSoundMuted()
     videoRef.current.play()
     videoWrapperRef.current.style.opacity = VIDEO_PLAYING_STYLE
+    gameContentRef.current.style.opacity = VIDEO_PLAYING_STYLE
   }
 
   const hideGameVideo = () => {
@@ -108,10 +125,12 @@ function Game(props) {
     videoRef.current.muted = true
     videoRef.current.pause()
     videoWrapperRef.current.style.opacity = VIDEO_NOT_PLAYING_STYLE
-    videoRef.current.currentTime = 0
+    gameContentRef.current.style.opacity = VIDEO_NOT_PLAYING_STYLE
+    // videoRef.current.currentTime = 0
   }
 
   return(
+
     <div className='game-wrapper col-md-4' style={gameContainerStyle} 
     onMouseOver={() => (beginGameVideo())} 
     onMouseOut={() => (hideGameVideo())}>
@@ -127,12 +146,20 @@ function Game(props) {
         ) : null
       }
 
-      <div className='game-container'>
-        <h1>{props.game.title}</h1>
+      <div className='game-container' ref={gameContentRef}>
+
         <div className='game-platform'><img src={gameIcon} /></div>
+
+        <h1>{props.game.title}</h1>
         <h2>{releaseDate}</h2>
         <h3>{props.game.descriptionShort}</h3>
+        
+        <div className='game-sound-button-wrapper' onClick={(mouseEvent) => {props.toggleGameSound(mouseEvent); }}>
+          <div className={props.soundEnabled} />
+        </div>
+
       </div>
+
     </div>
   )
 }

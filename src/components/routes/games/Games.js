@@ -1,12 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Game from './game/Game'
+
+const GENRES = {
+  "Action": '/images/games/genres/action.png',
+  "Arcade": '/images/games/genres/arcade.png',
+  "Puzzle": '/images/games/genres/puzzle.png',
+  "Strategy": '/images/games/genres/strategy.png',
+  "Role-playing": '/images/games/genres/role-playing-game.png',
+}
 
 function Games(props) {
 
   const [gameGenres, setGenres] = useState()
 
   const displayGamesData = (data) => {
-    if(gameGenres == null) {
+  if(gameGenres == null) {
       setGenres(data)
     }
   }
@@ -23,9 +31,10 @@ function Games(props) {
         Object.keys(gameGenres).map((genre, index) => {
           return (
             <div className='genre-wrapper' key={`genre-wrapper-${genre}`}>
+
               <div className='genre-header'>
 
-                <h1>{genre}</h1>
+                <h1><img className='games-genre-img' src={GENRES[genre]} /> {genre}</h1>
 
               </div>
 
@@ -35,7 +44,7 @@ function Games(props) {
                   gameGenres[genre].map((gameObject, index) => {
 
 
-                    return(<Game game={gameObject} key={`game-obj-${index}`}/>)
+                    return(<Game game={gameObject} key={`game-obj-${index}`} toggleGameSound={props.toggleGameSound} soundEnabled={props.soundEnabled}/>)
 
                   })
                 }

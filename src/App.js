@@ -11,6 +11,9 @@ import Games from './components/routes/games/Games'
 import Nav from './components/nav/Nav'
 import DataLoader from './js/DataLoader'
 
+const SOUND_ENABLED_STRING = 'sound-enabled'
+const SOUND_DISABLED_STRING = 'sound-disabled'
+
 /**
  * App is the primary React Hooks function. This has access to 
  * Reacts hooks and returns jsx.
@@ -20,8 +23,20 @@ function App(props) {
 
   // The main state for our application
   const [state, setState] = useState()
+  const [gamePreviewSoundEnabled, setGamePreviewSound] = useState(SOUND_DISABLED_STRING)
 
   const dataLoader = new DataLoader()
+
+  const toggleGameSound = (mouseEvent, callback = null) => {
+    if(gamePreviewSoundEnabled == SOUND_DISABLED_STRING) {
+      setGamePreviewSound(SOUND_ENABLED_STRING)
+    } else if(gamePreviewSoundEnabled == SOUND_ENABLED_STRING) {
+      setGamePreviewSound(SOUND_DISABLED_STRING)
+    }
+    if(callback != null) {
+      callback()
+    }
+  }
 
   return (
     <div className="App">
@@ -31,7 +46,7 @@ function App(props) {
         <Nav />
         
         <Route path="/" exact render={(props) => <Index dataLoader={dataLoader} />} />
-        <Route path="/games" render={(props) => <Games dataLoader={dataLoader} />} />
+        <Route path="/games" exact render={(props) => <Games dataLoader={dataLoader} toggleGameSound={toggleGameSound} soundEnabled={gamePreviewSoundEnabled} />} />
         <Route path="/art" render={(props) => <Art dataLoader={dataLoader} />} />
         <Route path="/music" render={(props) => <Music dataLoader={dataLoader} />} />
         <Route path="/timeline" render={(props) => <Timeline dataLoader={dataLoader} />} />

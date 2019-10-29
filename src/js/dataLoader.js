@@ -50,8 +50,8 @@ class DataLoader {
     else if(type == this.GAMES_JSON) {
       JSONUrl = this.GAMES_URL;
       if(this.games != null) {
-        if(this.callback != null) {
-          this.callback(this.games)
+        if(callback != null) {
+          callback(this.games)
         }
         return this.games
       }
@@ -60,8 +60,8 @@ class DataLoader {
     else if(type == this.MUSIC_JSON) {
       JSONUrl = this.MUSIC_URL;
       if(this.music != null) {
-        if(this.callback != null) {
-          this.callback(this.music)
+        if(callback != null) {
+          callback(this.music)
         }
         return this.music
       }
@@ -70,8 +70,8 @@ class DataLoader {
     else if(type == this.ART_JSON) {
       JSONUrl = this.FEATURED_ART_URLURL;
       if(this.art != null) {
-        if(this.callback != null) {
-          this.callback(this.art)
+        if(callback != null) {
+          callback(this.art)
         }
         return this.art
       }
@@ -80,8 +80,8 @@ class DataLoader {
     else if(type == this.RANDOM_JSON) {
       JSONUrl = this.RANDOM_URL;
       if(this.random != null) {
-        if(this.callback != null) {
-          this.callback(this.random)
+        if(callback != null) {
+          callback(this.random)
         }
         return this.random
       }
