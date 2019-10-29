@@ -1,22 +1,138 @@
 {
   "Role-playing": [
     {
+      "title": "Stone King III",
+      "gameId": "stone-king-iii",
+      "releaseDate": "2019-10-14",
+      "platform": "Desktop, Web, Flash",
+      "description": "Explore the unknown territory of the Kingdom of Darkness. Become a powerful fighter! Train your physical strength, magic spells, and ranging through epic real-time battles. Earn gold and make special equipment through your skills and completling unique quests.",
+      "descriptionShort": "Travel into the world of Stone King III",
+      "instructions": "[MOUSE] - Interact / Attack<br>[W A S D] - Movement<br>[0 - 9] - Abilities<br>[C] - Inventory",
+      "patchNotes": null,
+      "image": "DEFAULT",
+      "video": "DEFAULT_m4v",
+      "site": "DEFAULT",
+      "extras": {}
+    },
+    {
+      "title": "Stone King II",
+      "gameId": "stone-king-ii",
+      "releaseDate": "2013-5-4",
+      "platform": "Desktop, Web, Flash",
+      "description": "Avenge your fallen village! Roam the lands in search of powerful stonite capable of unleashing true power. Advance your combat skills by obtaining new weapons and equippables. Fight through thick and thin as you forge onward into the completely uncharted territory.",
+      "descriptionShort": "Travel into the world of Stone King II",
+      "instructions": "[MOUSE] - Interact / Attack<br>[W, D] - Movement<br>[SPACE] - Jump<br>[S] - Roll<br>[C] - Inventory<br>[Z] - Abilities<br>[Q, W, E] - Change Equip Set",
+      "patchNotes": null,
+      "image": "DEFAULT_gif",
+      "video": "DEFAULT",
+      "site": "DEFAULT",
+      "extras": {}
+    },
+    {
       "title": "Stone King",
-      "releaseDate": "9/22/11",
+      "gameId": "stone-king",
+      "releaseDate": "2011-9-22",
       "platform": "Desktop, Web, Flash",
       "description": "The King has become ill, and his evil brother is jealous of his powerful Stonite Armor. Become the next Stone King as you venture through the lands of the Kingdom of Light in search of pieces for a new set of Stonite Armor. Train your offensive and defensive skills through the battling monsters and other powerful foes!",
-      "icon": "../img/stone-king-icon.png",
-      "site": "../games/stone-king/"
+      "descriptionShort": "Travel into the world of Stone King",
+      "instructions": "[MOUSE] - Interact / Attack<br>[W, A, S, D] - Movement<br>[SPACE] - Attack (In Battle)",
+      "patchNotes": null,
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "extras": {}
+    }
+  ],
+  "Action": [
+    {
+      "title": "One Super Battle",
+      "gameId": "one-super-battle",
+      "releaseDate": "2013-8-27",
+      "platform": "Desktop, Web, Flash",
+      "description": "Engage into one super battle against a mighty foe! Train your character's stats in order to enhance your battling capabilities. See how long you can last against the ultimate enemy.",
+      "descriptionShort": "Jump into battle!",
+      "instructions": "[MOUSE] - Select Move",
+      "patchNotes": "",
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "extras": {}
     }
   ],
   "Arcade": [
     {
-      "title": "insertArcadeGame",
-      "releaseDate": "9/22/11",
+      "title": "Tetris Ages",
+      "gameId": "tetris-ages",
+      "releaseDate": "2012-2-11",
       "platform": "Desktop, Web, Flash",
-      "description": "The King has become ill, and his evil brother is jealous of his powerful Stonite Armor. Become the next Stone King as you venture through the lands of the Kingdom of Light in search of pieces for a new set of Stonite Armor. Train your offensive and defensive skills through the battling monsters and other powerful foes!",
-      "icon": "../img/stone-king-icon.png",
-      "site": "../games/stone-king/"
+      "description": "Clear as many lines as you can before the year 2012! The time advances forward as you set each block. Starting from year zero, place your blocks wisely so that 200 lines will be cleared before the year of 2012.",
+      "descriptionShort": "Clear 200 lines!",
+      "instructions": "[LEFT, RIGHT] - Move piece<br>[DOWN] - Lower piece<br>[UP, SPACE] - Drop piece<br>[X] - Rotate Clockwise<br>[Z] - Rotate Counter-Clockwise",
+      "patchNotes": "",
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "extras": {}
+    },
+    {
+      "title": "Tic Tac Toe",
+      "gameId": "tic-tac-toe",
+      "releaseDate": "2010-6-22",
+      "platform": "Desktop, Web, Flash",
+      "description": "Enjoy going up against the computer in a fun game of Tic Tac Toe! Use your mouse to move your set pieces so that they all line up horizontally, vertically, or diagonally. Don't let the computer best you!",
+      "descriptionShort": "Play Tic Tac Toe!",
+      "instructions": "[Mouse] - Select / Drop Piece",
+      "patchNotes": "",
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "extras": {}
+    },
+    {
+      "title": "Terry",
+      "gameId": "terry",
+      "releaseDate": "2011-6-3",
+      "platform": "Desktop, Web, Flash",
+      "description": "Run as fast as you can from inescapable death. In a dream of nothing but fear and blocks make it to the end, if you can.",
+      "descriptionShort": "Run from the inescapable",
+      "instructions": "[Mouse] Aim and click to create/destroy blocks<br>[SHIFT + Click] Destroy a block<br>[A D] Move Terry forward or backward<br>[W] Jump. Hold to increase height<br>[S] Duck<br>[Space] Speed boost",
+      "patchNotes": "",
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "extras": {}
+    }
+  ],
+  "Puzzle": [
+    {
+      "title": "The Afterlife",
+      "gameId": "the-afterlife",
+      "releaseDate": "2012-6-7",
+      "platform": "Desktop, Web, Flash",
+      "description": "Journey into the afterlife as you discover new secrets. Everyone deserves a second chance in order to find something new which may lead them down the right path. Find your way out of the forest of life, and reunite with family!",
+      "descriptionShort": "Journey into the afterlife.",
+      "instructions": "[A, D] - Move<br>[SPACE] - Jump / Switch<br>[SHIFT] - Reincarnate<br>[R] - Restart",
+      "patchNotes": "",
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "extras": {}
+    }
+  ],
+  "Strategy": [
+    {
+      "title": "Space Invaders",
+      "gameId": "space-invaders",
+      "releaseDate": "2013-6-12",
+      "platform": "Desktop, Web, Flash",
+      "description": "Your space base is under attack! Strategically set up defensive turrets which take down enemy space invaders! Create the best defensive line the world has ever seen in order to clear 30 waves of invasion madness!",
+      "descriptionShort": "Defend your base!",
+      "instructions": "[Mouse] - Select, Purchase, Upgrade.",
+      "patchNotes": "",
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "extras": {}
     }
   ]
 }

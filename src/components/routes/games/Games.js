@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import Game from './game/Game'
 
 function Games(props) {
 
-  const [games, setGames] = useState()
+  const [gameGenres, setGenres] = useState()
 
   const displayGamesData = (data) => {
-    if(games == null) {
-      setGames(data)
+    if(gameGenres == null) {
+      setGenres(data)
     }
   }
 
@@ -15,11 +16,35 @@ function Games(props) {
   return(
     <div className='games-wrapper'>
 
-      <div className='navbar-spacing' />
+      <div className='navbar-spacing'></div>
 
       {
-        (games != null) ?
-        1 : 0 // Actually this is a genre, not a game.
+        (gameGenres != null) ?
+        Object.keys(gameGenres).map((genre, index) => {
+          return (
+            <div className='genre-wrapper' key={`genre-wrapper-${genre}`}>
+              <div className='genre-header'>
+
+                <h1>{genre}</h1>
+
+              </div>
+
+              <div className='genre-games-wrapper row'>
+                
+                {
+                  gameGenres[genre].map((gameObject, index) => {
+
+
+                    return(<Game game={gameObject} key={`game-obj-${index}`}/>)
+
+                  })
+                }
+
+              </div>
+
+            </div>
+          )
+        }) : null
       }
       
     </div>
