@@ -5,13 +5,10 @@
 import React, { useState, useEffect } from 'react';
 import Featured from './featured/Featured'
 import background from './Background'
+import utils from '../../../js/Utilities'
 import imgRIBanner from '../../../img/hypercube.png'
 
 function Index(props) {
-
-  // Enable or disable the background effects (CPU heavy)
-  // Options: 'NONE': Do not render; 'LITE': Only 30 circles available; 'DEFAULT': 180 full circle
-  const BACKGROUND_MODE = 'LITE'
 
   // Display the background using useEffect (componentDidMount)
   useEffect(() => {
@@ -20,6 +17,12 @@ function Index(props) {
 
   // Display the background using useEffect (componentDidUnmount)
   useEffect(() => (() => background.unloadBG()))
+
+  // Enable or disable the background effects (CPU heavy)
+  // Options: 'NONE': Do not render; 'LITE': Only 30 circles available; 'DEFAULT': 180 full circle
+  const BACKGROUND_MODE = 'LITE'
+
+  utils.initRoute()
 
   return(
     <div className="route route-index">

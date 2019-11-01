@@ -1,3 +1,7 @@
+
+
+
+// Games view page
 .games-wrapper {
 
   & {
@@ -37,6 +41,125 @@
     height: 35px;
     background: #eee;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+  }
+
+  .genre-upcoming-content {
+    padding-top: $navbarHeight + 10px;
+    padding-bottom: $navbarHeight + 10px;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+
+    
+
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.5);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .genre-upcoming-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .upcoming-video-wrapper {
+    margin: 20px 0;
+  }
+
+  .genre-upcoming-description {
+    margin: 20px 5px;
+    height: 200px;
+  }
+
+  .upcoming-video-wrapper video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 720px) {
+    .upcoming-video-wrapper video {
+
+    }
+  }
+
+  .genre-upcoming {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+  }
+
+  .genre-upcoming h1 {
+    padding: 30px 0 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .genre-upcoming h2 {
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7em;
+    border-bottom: 1px solid rgba(50, 50, 255, 0.3);
+    text-align: center;
+  }
+  
+  .genre-upcoming h3 {
+    font-weight: normal;
+    font-size: 1.3em;
+  }
+  
+  .genre-upcoming-wrapper {
+    margin-top: 50px;
+  }
+
+  .upcoming-game-header-text {
+    margin: 0;
+    padding: 25px 0;
+    // border-bottom: 3px solid rgba(169, 213, 255, 0.623);
+
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.8);
+
+    background: linear-gradient(rgba(29, 18, 78, 0.048) 0%, rgba(54, 90, 255, 0.151) 50%, rgba(107, 184, 255, 0.322) 100%);
+
+    // background:#c4c4ff;
+    // background-repeat: repeat-x;
+    // background-image: url('../../../img/bg-highlight.png');
+    // background-size: 100% auto;
+    
+    animation: upcomingTextGlow 1s infinite alternate;
+  }
+
+  @keyframes upcomingTextGlow {
+    0% {
+      text-shadow: 2px 2px 4px rgba(0, 0, 255, 0.8);
+    }
+    100% {
+      text-shadow: 2px 2px 20px rgba(255, 111, 255, 1);
+    }
+  }
+
+}
+
+// Games Route page (view game)
+.game-route-wrapper {
+
+  .play-game-header {
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .play-game-header img {
+    display: block;
+    clear: both;
   }
 
 }

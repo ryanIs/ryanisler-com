@@ -7,6 +7,7 @@ import imgGamesNav from '../../img/games-nav.png'
 import imgMusicNav from '../../img/music-nav.png'
 import imgArtNav from '../../img/art-nav.png'
 import imgTimelineNav from '../../img/timeline-nav.png'
+import imgBlogNav from '../../img/blog-nav.png'
 import imgAboutNav from '../../img/about-nav.png'
 import imgBrand from '../../img/hypercube.png'
 
@@ -26,11 +27,12 @@ function Nav(props) {
 
         <div className='navbar-nav' >
           <ul className='navbar-right'>
-            <li><Link to="/games"><img className='navbar-icon' src={imgGamesNav} alt='' /> Games</Link></li>
-            <li><Link to="/music"><img className='navbar-icon' src={imgMusicNav} alt='' /> Music</Link></li>
-            <li><Link to="/art"><img className='navbar-icon' src={imgArtNav} alt='' /> Art</Link></li>
-            <li><Link to="/timeline"><img className='navbar-icon' src={imgTimelineNav} alt='' /> Timeline</Link></li>
-            <li><Link to="/about"><img className='navbar-icon' src={imgAboutNav} alt='' /> About</Link></li>
+            <li><Link to="/games"><img className='navbar-icon' src={imgGamesNav} alt='' /> <span className='blue'>G</span>ames</Link></li>
+            <li><Link to="/art"><img className='navbar-icon' src={imgArtNav} alt='' /> <span className='blue'>A</span>rt</Link></li>
+            <li><Link to="/music"><img className='navbar-icon' src={imgMusicNav} alt='' /> <span className='blue'>M</span>usic</Link></li>
+            <li><a href="http://www.ryanisler.com/blog"><img className='navbar-icon' src={imgBlogNav} alt='' /> <span className='blue'>B</span>log</a></li>
+            <li><Link to="/timeline"><img className='navbar-icon' src={imgTimelineNav} alt='' /> <span className='blue'>T</span>imeline</Link></li>
+            <li><Link to="/about"><img className='navbar-icon' src={imgAboutNav} alt='' /> <span className='blue'>A</span>bout</Link></li>
           </ul>
         </div>
 

@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Index from './components/routes/index/Index'
 import Games from './components/routes/games/Games'
+import GameRoutes from './components/routes/games/GameRoutes'
 import Nav from './components/nav/Nav'
 import DataLoader from './js/DataLoader'
 
@@ -51,6 +52,9 @@ function App(props) {
         <Route path="/music" render={(props) => <Music dataLoader={dataLoader} />} />
         <Route path="/timeline" render={(props) => <Timeline dataLoader={dataLoader} />} />
         <Route path="/About" render={(props) => <About dataLoader={dataLoader} />} />
+
+        <GameRoutes dataLoader={dataLoader} />
+
       </Router>
     </div>
   )

@@ -1,82 +1,19 @@
 import React, { useState, useEffect} from 'react'
+import { Link } from "react-router-dom"
+import utils from '../../../../js/Utilities'
 
 // TODO: Add this to a (global) React.Context
 const SOUND_ENABLED_STRING = 'sound-enabled'
 const SOUND_DISABLED_STRING = 'sound-disabled'
 
-const ICONS = {
-  FLASH: '/images/games/flash-icon.png',
-  UNITY: '/images/games/unity-icon.png',
-}
-
-// Objective: Handle 'null' case for default TEXT inside box (or cool icon)
-function getBGImage(imageSrc, gameId) {
-  let imageArgs
-
-  if(imageSrc == null) {
-    return ''
-  }
-
-  if(imageSrc.toUpperCase() == 'DEFAULT') {
-    return `url(/images/games/preview/${gameId}.png)`
-  }
-
-  else if((imageArgs = imageSrc.split('_'))[0] == 'DEFAULT') {
-    return `url(/images/games/preview/${gameId}.${imageArgs[1]})`
-  }
-  
-  return imageSrc
-}
-
-// TODO: set <source type> dynamically
-function getGameVideo(videoSrc, gameId) {
-  let videoArgs
-
-  if(videoSrc == null) {
-    return null
-  }
-
-  if(videoSrc.toUpperCase() == 'DEFAULT') {
-    return `/images/games/preview/${gameId}.mp4`
-  }
-
-  else if((videoArgs = videoSrc.split('_'))[0] == 'DEFAULT') {
-    return `/images/games/preview/${gameId}.${videoArgs[1]}`
-  }
-  return videoSrc
-}
-
-function getGameIcon(strPlatform) {
-
-  strPlatform = strPlatform.toLowerCase()
-
-  if(strPlatform.indexOf('flash') != -1) {
-    return ICONS.FLASH
-  }
-  
-  else if(strPlatform.indexOf('unity') != -1) {
-    return ICONS.UNITY
-  }
-  
-  return ICONS.FLASH
-}
-
-function getReleaseDate(ISODate) {
-
-  let relDate = new Date(ISODate)
-
-  let strDate = relDate.toLocaleString('default', {month: 'long'})
-
-  strDate = strDate + ` ${relDate.getFullYear()}`
-
-  return strDate
-}
 
 function Game(props) {
 
   useEffect(() => {
     updateSoundMuted()
   }, [props.soundEnabled])
+
+  utils.initRoute()
 
   // Video HTML element reference for changing video
   const videoRef = React.createRef()
@@ -87,53 +24,63 @@ function Game(props) {
 
   const VIDEO_PLAYING_STYLE = '1.0'
 
-  // TODO: Set this later
-  let videoMuted = true
+  const releaseDate = utils.getReleaseDate(props.game.releaseDate)
 
-  const releaseDate = getReleaseDate(props.game.releaseDate)
-
-  const gameIcon = getGameIcon(props.game.platform)
+  const gameIcon = utils.getGameIcon(props.game.platform)
 
   // Sets background iamge
   const gameContainerStyle = {
-    backgroundImage: getBGImage(props.game.image, props.game.gameId)
+    backgroundImage: utils.getGamePreviewBGImage(props.game.image, props.game.gameId)
   }
 
   // Sets game video
-  const gameVideo = getGameVideo(props.game.video, props.game.gameId)
+  const gameVideo = utils.getGameVideo(props.game.video, props.game.gameId)
+
+  const gameSoundBtnStyle = (props.game.video == null) ?
+    {display: 'none'} : {}
+
 
   const updateSoundMuted = () => {
     if(videoRef.current != null) {
-    videoRef.current.muted = (props.soundEnabled == SOUND_ENABLED_STRING) ? false : true
+      videoRef.current.muted = (props.soundEnabled == SOUND_ENABLED_STRING) ? false : true
     }
   }
 
   const beginGameVideo = () => {
+
+    gameContentRef.current.style.opacity = VIDEO_PLAYING_STYLE
+
     if(videoRef.current == null) {
       return
     }
+
     updateSoundMuted()
     videoRef.current.play()
     videoWrapperRef.current.style.opacity = VIDEO_PLAYING_STYLE
-    gameContentRef.current.style.opacity = VIDEO_PLAYING_STYLE
+
   }
 
   const hideGameVideo = () => {
+
+    gameContentRef.current.style.opacity = VIDEO_NOT_PLAYING_STYLE
     if(videoRef.current == null) {
       return
     }
+
     videoRef.current.muted = true
     videoRef.current.pause()
     videoWrapperRef.current.style.opacity = VIDEO_NOT_PLAYING_STYLE
-    gameContentRef.current.style.opacity = VIDEO_NOT_PLAYING_STYLE
     // videoRef.current.currentTime = 0
+
   }
 
   return(
 
-    <div className='game-wrapper col-md-4' style={gameContainerStyle} 
-    onMouseOver={() => (beginGameVideo())} 
-    onMouseOut={() => (hideGameVideo())}>
+    <div 
+      className='game-wrapper col-md-4' style={gameContainerStyle} 
+      onMouseOver={() => (beginGameVideo())} 
+      onMouseOut={() => (hideGameVideo())}
+    >
       
       {
         (props.game.video != null) ?
@@ -146,19 +93,21 @@ function Game(props) {
         ) : null
       }
 
-      <div className='game-container' ref={gameContentRef}>
+      <Link to={`/games/${props.game.gameId}`}>
+        <div className='game-container' ref={gameContentRef}>
 
-        <div className='game-platform'><img src={gameIcon} /></div>
+          <div className='game-platform'><img src={gameIcon} /></div>
 
-        <h1>{props.game.title}</h1>
-        <h2>{releaseDate}</h2>
-        <h3>{props.game.descriptionShort}</h3>
-        
-        <div className='game-sound-button-wrapper' onClick={(mouseEvent) => {props.toggleGameSound(mouseEvent); }}>
-          <div className={props.soundEnabled} />
+          <h1>{props.game.title}</h1>
+          <h2>{releaseDate}</h2>
+          <h3>{props.game.descriptionShort}</h3>
+          
+          <div className='game-sound-button-wrapper' onClick={(mouseEvent) => {props.toggleGameSound(mouseEvent); }} style={gameSoundBtnStyle}>
+            <div className={props.soundEnabled} />
+          </div>
+
         </div>
-
-      </div>
+      </Link>
 
     </div>
   )

@@ -3,12 +3,11 @@
     "type": "Game",
     "title": "Stone King IV",
     "released": false,
-    "releaseDate": "1/1/2021",
+    "releaseDate": "2021-1-1",
     "genre": "Role-playing game",
     "platform": "Desktop, Web, Unity",
     "description": "Coming Janurary 1st 2021.",
     "featuredImage": "../images/featured/sk4.jpg",
-    "image": "../images/featured/stone-king-iii-icon.png",
     "site": null
   },
 
@@ -16,12 +15,11 @@
     "type": "Game",
     "title": "Stone King III",
     "released": true,
-    "releaseDate": "10/9/2014",
+    "releaseDate": "2014-10-9",
     "genre": "Role-playing game",
     "platform": "Desktop, Web, Flash",
     "description": "Explore the unknown territory of the Kingdom of Darkness. Become a powerful fighter! Earn gold and make special equipment through your skills and completling unique quests.",
     "featuredImage": "../images/featured/sk3.jpg",
-    "image": "../images/featured/stone-king-iii-icon.png",
     "site": "../games/stone-king-iii/"
   }
 ]

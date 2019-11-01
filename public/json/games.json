@@ -3,7 +3,7 @@
     {
       "title": "Stone King III",
       "gameId": "stone-king-iii",
-      "releaseDate": "2019-10-14",
+      "releaseDate": "2014-10-19",
       "platform": "Desktop, Web, Flash",
       "description": "Explore the unknown territory of the Kingdom of Darkness. Become a powerful fighter! Train your physical strength, magic spells, and ranging through epic real-time battles. Earn gold and make special equipment through your skills and completling unique quests.",
       "descriptionShort": "Travel into the world of Stone King III",
@@ -12,6 +12,13 @@
       "image": "DEFAULT",
       "video": "DEFAULT_m4v",
       "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     },
     {
@@ -26,6 +33,13 @@
       "image": "DEFAULT_gif",
       "video": "DEFAULT",
       "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     },
     {
@@ -40,6 +54,13 @@
       "image": "DEFAULT",
       "video": null,
       "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     }
   ],
@@ -56,6 +77,13 @@
       "image": "DEFAULT",
       "video": null,
       "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     }
   ],
@@ -72,20 +100,13 @@
       "image": "DEFAULT",
       "video": null,
       "site": "DEFAULT",
-      "extras": {}
-    },
-    {
-      "title": "Tic Tac Toe",
-      "gameId": "tic-tac-toe",
-      "releaseDate": "2010-6-22",
-      "platform": "Desktop, Web, Flash",
-      "description": "Enjoy going up against the computer in a fun game of Tic Tac Toe! Use your mouse to move your set pieces so that they all line up horizontally, vertically, or diagonally. Don't let the computer best you!",
-      "descriptionShort": "Play Tic Tac Toe!",
-      "instructions": "[Mouse] - Select / Drop Piece",
-      "patchNotes": "",
-      "image": "DEFAULT",
-      "video": null,
-      "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     },
     {
@@ -100,6 +121,34 @@
       "image": "DEFAULT",
       "video": null,
       "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
+      "extras": {}
+    },
+    {
+      "title": "Tic Tac Toe",
+      "gameId": "tic-tac-toe",
+      "releaseDate": "2010-6-22",
+      "platform": "Desktop, Web, Flash",
+      "description": "Enjoy going up against the computer in a fun game of Tic Tac Toe! Use your mouse to move your set pieces so that they all line up horizontally, vertically, or diagonally. Don't let the computer best you!",
+      "descriptionShort": "Play Tic Tac Toe!",
+      "instructions": "[Mouse] - Select / Drop Piece",
+      "patchNotes": "",
+      "image": "DEFAULT",
+      "video": null,
+      "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     }
   ],
@@ -116,6 +165,13 @@
       "image": "DEFAULT",
       "video": null,
       "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     }
   ],
@@ -132,7 +188,36 @@
       "image": "DEFAULT",
       "video": null,
       "site": "DEFAULT",
+      "game": {
+        "type": "FLASH",
+        "gameFile": "DEFAULT",
+        "gameFileWidth": 550,
+        "gameFileHeight": 400,
+        "headerImage": "DEFAULT"
+      },
       "extras": {}
     }
-  ]
+  ],
+  "UPCOMING": {
+    "title": "Dungeon Escape 2",
+    "gameId": "dungeon-escape-2",
+    "released": false,
+    "releaseDate": "2019-12-27",
+    "genre": "Arcade",
+    "platform": "Desktop, Web, Unity",
+    "description": "Dungeon Escape 2 is a thrilling arcade game with intense shoot-em-up style gameplay.",
+    "descriptionShort": "Coming December 27st 2019",
+    "image": "/images/games/upcoming-banner.gif",
+    "backgroundImage": "/images/games/upcoming-background.png",
+    "site": null,
+    "video": null,
+    "game": {
+      "type": "FLASH",
+      "gameFile": "DEFAULT",
+      "gameFileWidth": 550,
+      "gameFileHeight": 400,
+      "headerImage": "DEFAULT"
+    },
+    "extras": {}
+  }
 }

@@ -24,3 +24,6 @@ yarn-error.log*
 OBJECTIVES.TXT
 src/js/old.js
 src/index-old.html
+/workspace
+
+/public/games
