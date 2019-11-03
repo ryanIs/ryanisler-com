@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Index from './components/routes/index/Index'
 import Games from './components/routes/games/Games'
 import GameRoutes from './components/routes/games/GameRoutes'
+import Music from './components/routes/music/Music'
 import Nav from './components/nav/Nav'
 import DataLoader from './js/DataLoader'
 
@@ -64,7 +65,6 @@ function App(props) {
 // Temporary routes until the component is built out
 const About = (props) => (<h2>About section!</h2>)
 const Art = (props) => (<h2>Art section!</h2>)
-const Music = (props) => (<h2>Music section!</h2>)
 const Timeline = (props) => (<h2>Timeline section!</h2>)
 
 export default App;

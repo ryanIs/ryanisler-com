@@ -2,7 +2,7 @@
   "Role-playing": [
     {
       "title": "Stone King III",
-      "gameId": "stone-king-iii",
+      "id": "stone-king-iii",
       "releaseDate": "2014-10-19",
       "platform": "Desktop, Web, Flash",
       "description": "Explore the unknown territory of the Kingdom of Darkness. Become a powerful fighter! Train your physical strength, magic spells, and ranging through epic real-time battles. Earn gold and make special equipment through your skills and completling unique quests.",
@@ -23,7 +23,7 @@
     },
     {
       "title": "Stone King II",
-      "gameId": "stone-king-ii",
+      "id": "stone-king-ii",
       "releaseDate": "2013-5-4",
       "platform": "Desktop, Web, Flash",
       "description": "Avenge your fallen village! Roam the lands in search of powerful stonite capable of unleashing true power. Advance your combat skills by obtaining new weapons and equippables. Fight through thick and thin as you forge onward into the completely uncharted territory.",
@@ -44,7 +44,7 @@
     },
     {
       "title": "Stone King",
-      "gameId": "stone-king",
+      "id": "stone-king",
       "releaseDate": "2011-9-22",
       "platform": "Desktop, Web, Flash",
       "description": "The King has become ill, and his evil brother is jealous of his powerful Stonite Armor. Become the next Stone King as you venture through the lands of the Kingdom of Light in search of pieces for a new set of Stonite Armor. Train your offensive and defensive skills through the battling monsters and other powerful foes!",
@@ -67,7 +67,7 @@
   "Action": [
     {
       "title": "One Super Battle",
-      "gameId": "one-super-battle",
+      "id": "one-super-battle",
       "releaseDate": "2013-8-27",
       "platform": "Desktop, Web, Flash",
       "description": "Engage into one super battle against a mighty foe! Train your character's stats in order to enhance your battling capabilities. See how long you can last against the ultimate enemy.",
@@ -80,8 +80,8 @@
       "game": {
         "type": "FLASH",
         "gameFile": "DEFAULT",
-        "gameFileWidth": 550,
-        "gameFileHeight": 400,
+        "gameFileWidth": 640,
+        "gameFileHeight": 480,
         "headerImage": "DEFAULT"
       },
       "extras": {}
@@ -90,7 +90,7 @@
   "Arcade": [
     {
       "title": "Tetris Ages",
-      "gameId": "tetris-ages",
+      "id": "tetris-ages",
       "releaseDate": "2012-2-11",
       "platform": "Desktop, Web, Flash",
       "description": "Clear as many lines as you can before the year 2012! The time advances forward as you set each block. Starting from year zero, place your blocks wisely so that 200 lines will be cleared before the year of 2012.",
@@ -111,7 +111,7 @@
     },
     {
       "title": "Terry",
-      "gameId": "terry",
+      "id": "terry",
       "releaseDate": "2011-6-3",
       "platform": "Desktop, Web, Flash",
       "description": "Run as fast as you can from inescapable death. In a dream of nothing but fear and blocks make it to the end, if you can.",
@@ -132,7 +132,7 @@
     },
     {
       "title": "Tic Tac Toe",
-      "gameId": "tic-tac-toe",
+      "id": "tic-tac-toe",
       "releaseDate": "2010-6-22",
       "platform": "Desktop, Web, Flash",
       "description": "Enjoy going up against the computer in a fun game of Tic Tac Toe! Use your mouse to move your set pieces so that they all line up horizontally, vertically, or diagonally. Don't let the computer best you!",
@@ -155,7 +155,7 @@
   "Puzzle": [
     {
       "title": "The Afterlife",
-      "gameId": "the-afterlife",
+      "id": "the-afterlife",
       "releaseDate": "2012-6-7",
       "platform": "Desktop, Web, Flash",
       "description": "Journey into the afterlife as you discover new secrets. Everyone deserves a second chance in order to find something new which may lead them down the right path. Find your way out of the forest of life, and reunite with family!",
@@ -168,7 +168,7 @@
       "game": {
         "type": "FLASH",
         "gameFile": "DEFAULT",
-        "gameFileWidth": 550,
+        "gameFileWidth": 650,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
       },
@@ -178,7 +178,7 @@
   "Strategy": [
     {
       "title": "Space Invaders",
-      "gameId": "space-invaders",
+      "id": "space-invaders",
       "releaseDate": "2013-6-12",
       "platform": "Desktop, Web, Flash",
       "description": "Your space base is under attack! Strategically set up defensive turrets which take down enemy space invaders! Create the best defensive line the world has ever seen in order to clear 30 waves of invasion madness!",
@@ -200,7 +200,7 @@
   ],
   "UPCOMING": {
     "title": "Dungeon Escape 2",
-    "gameId": "dungeon-escape-2",
+    "id": "dungeon-escape-2",
     "released": false,
     "releaseDate": "2019-12-27",
     "genre": "Arcade",

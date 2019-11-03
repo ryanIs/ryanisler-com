@@ -30,11 +30,11 @@ function Game(props) {
 
   // Sets background iamge
   const gameContainerStyle = {
-    backgroundImage: utils.getGamePreviewBGImage(props.game.image, props.game.gameId)
+    backgroundImage: utils.getGamePreviewBGImage(props.game.image, props.game.id)
   }
 
   // Sets game video
-  const gameVideo = utils.getGameVideo(props.game.video, props.game.gameId)
+  const gameVideo = utils.getGameVideo(props.game.video, props.game.id)
 
   const gameSoundBtnStyle = (props.game.video == null) ?
     {display: 'none'} : {}
@@ -93,7 +93,7 @@ function Game(props) {
         ) : null
       }
 
-      <Link to={`/games/${props.game.gameId}`}>
+      <Link className='game-link-a' to={`/games/${props.game.id}`}>
         <div className='game-container' ref={gameContentRef}>
 
           <div className='game-platform'><img src={gameIcon} /></div>

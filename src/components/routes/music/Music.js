@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import utils from '../../../js/Utiities'
+
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import { reducer as jPlayers } from 'react-jplayer';
+import { reducer as jPlaylists } from 'react-jplaylist';
+
+import MusicPlayer from './MusicPlayer'
+import utils from '../../../js/Utilities'
+
+const store = createStore(combineReducers({ jPlayers, jPlaylists }));
 
 function Music(props) {
 
@@ -17,9 +26,14 @@ function Music(props) {
 
   return(
     <div className='music-wrapper'>
+      <div className='navbar-spacing'></div>
 
+      {/* <Provider store={store}> */}
+        <MusicPlayer />
+      {/* </Provider> */}
+      
     </div>
   )
 }
 
-export default Games
+export default Music

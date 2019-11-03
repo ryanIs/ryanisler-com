@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import GameRoute from './GameRoute'
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { Route } from "react-router-dom"
 import utils from '../../../js/Utilities'
 
 function GameRoutes(props) {
 
   const [gameData, setRoutes] = useState()
+
 
   const routeData = (data) => {
     if(gameData == null) {
@@ -39,7 +40,7 @@ function GameRoutes(props) {
 
                   return(
                     <React.Fragment key={`game-route-${index}`}>
-                      <Route path={`/games/${game.gameId}`} render={(props) => <GameRoute game={game} />} />
+                      <Route path={`/games/${game.id}`} render={(props) => <GameRoute game={game} />} />
                     </React.Fragment>
                   )
 

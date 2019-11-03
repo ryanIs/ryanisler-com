@@ -46,7 +46,7 @@
   .genre-upcoming-content {
     padding-top: $navbarHeight + 10px;
     padding-bottom: $navbarHeight + 10px;
-    width: 100vw;
+    width: 100%;
     height: auto;
     min-height: 100vh;
 
@@ -148,18 +148,131 @@
 // Games Route page (view game)
 .game-route-wrapper {
 
+  & {
+    background: #001;
+    min-height: 100vh;
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   .play-game-header {
     display: flex;
     width: auto;
     height: auto;
-    margin: 0 auto;
-    flex-direction: row;
-    justify-content: center;
+    margin: 10px auto 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
   }
   
   .play-game-header img {
     display: block;
-    clear: both;
+
+    min-height: 70px;
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 1px 1px 5px blue;
+  }
+  
+  .play-game-info-button {
+    $side: 20px;
+
+    margin: 0 auto 40px;
+    width: $side;
+    height: $side;
+    border-radius: $side / 2;
+
+    font-family:  monospace;
+    color: black;
+    text-align: center;
+    vertical-align: center;
+
+    font-size: 0.9em;
+    
+
+    background: gray;
+
+    opacity: 0.2;
+
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .play-game-info-button:hover {
+    opacity: 0.5;
+  }
+
+  .play-game-game {
+    display: flex;
+    margin: 0 0 30px;
+    padding: 20px 0;
+    justify-content: center;
+
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%,
+                                          rgba(255, 255, 255, 0) 20%,
+                                          rgba(0, 1, 88, 0.315), 50%,
+                                          rgba(255, 255, 255, 0) 80%,
+                                          rgba(255, 255, 255, 0) 100%);
+
+    opacity: 1.0;
+
+    animation: fadeInGame 2s ease-in;
+  }
+
+  @keyframes fadeInGame {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1.0;
+    }
+  }
+
+
+  #flash-object {
+    box-shadow: 0 0 8px 2px rgba(0, 0, 255, 0.089);
+  }
+
+  .play-game-info {
+    display: flex;
+    margin-bottom: 30px;
+    padding: 25px;
+    height: auto;
+    max-width: 1000px;
+    max-height: 400px;
+    justify-content: space-around;
+    opacity: 1;
+
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient( rgba(255, 255, 255, 0.13),  rgba(255, 255, 255, 0.048));
+
+    visibility: visible;
+    transition: max-height 1s ease-out, opacity 2s;
+
+    overflow: hidden;
+  }
+
+  .hide-info {
+    max-height: 0px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  /* Was going to do this, but was unnecessary */
+  .hide-info-heightless {
+    max-height: 0px;
+  }
+
+  .game-instructions {
+    flex-basis: 100%;
+    margin-right: 10px;
+
+    border-right: 1px solid rgb(255, 255, 255);
+  }
+
+  .game-description {
+    padding: 0 10px 10px;
   }
 
 }

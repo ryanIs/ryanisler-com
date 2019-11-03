@@ -2,6 +2,7 @@
   {
     "type": "Game",
     "title": "Stone King IV",
+    "id": "Stone King III",
     "released": false,
     "releaseDate": "2021-1-1",
     "genre": "Role-playing game",
@@ -14,6 +15,7 @@
   {
     "type": "Game",
     "title": "Stone King III",
+    "id": "Stone King III",
     "released": true,
     "releaseDate": "2014-10-9",
     "genre": "Role-playing game",

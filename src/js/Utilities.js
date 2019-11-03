@@ -17,22 +17,22 @@ export default {
 
   },
 
-  getGameSWFFile(gameSrc, gameId) {
+  getGameSWFFile(gameSrc, id) {
     
     if(gameSrc == null) {
       return ''
     }
 
     if(gameSrc.toUpperCase() == 'DEFAULT') {
-      return `/games/${gameId}/${gameId}.swf`
+      return `/games/${id}/${id}.swf`
     }
 
     return gameSrc
 
   },
 
-  getGameHeaderImage(imageSrc, gameId) {
-    
+  getGameHeaderImage(imageSrc, id) {
+
     let imageArgs
     
     if(imageSrc == null) {
@@ -40,11 +40,11 @@ export default {
     }
 
     if(imageSrc.toUpperCase() == 'DEFAULT') {
-      return `/games/${gameId}/${gameId}.png`
+      return `/games/${id}/${id}.png`
     }
 
     else if((imageArgs = imageSrc.split('_'))[0] == 'DEFAULT') {
-      return `url(/images/games/preview/${gameId}.${imageArgs[1]})`
+      return `url(/images/games/preview/${id}.${imageArgs[1]})`
     }
     
     return imageSrc
@@ -52,7 +52,7 @@ export default {
   },
 
   // Objective: Handle 'null' case for default TEXT inside box (or cool icon)
-  getGamePreviewBGImage: function(imageSrc, gameId) {
+  getGamePreviewBGImage: function(imageSrc, id) {
     let imageArgs
 
     if(imageSrc == null) {
@@ -60,18 +60,18 @@ export default {
     }
 
     if(imageSrc.toUpperCase() == 'DEFAULT') {
-      return `url(/images/games/preview/${gameId}.png)`
+      return `url(/images/games/preview/${id}.png)`
     }
 
     else if((imageArgs = imageSrc.split('_'))[0] == 'DEFAULT') {
-      return `url(/images/games/preview/${gameId}.${imageArgs[1]})`
+      return `url(/images/games/preview/${id}.${imageArgs[1]})`
     }
     
     return imageSrc
   },
 
   // TODO: set <source type> dynamically
-  getGameVideo: function (videoSrc, gameId) {
+  getGameVideo: function (videoSrc, id) {
     
     let videoArgs
 
@@ -80,11 +80,11 @@ export default {
     }
 
     if(videoSrc.toUpperCase() == 'DEFAULT') {
-      return `/images/games/preview/${gameId}.mp4`
+      return `/images/games/preview/${id}.mp4`
     }
 
     else if((videoArgs = videoSrc.split('_'))[0] == 'DEFAULT') {
-      return `/images/games/preview/${gameId}.${videoArgs[1]}`
+      return `/images/games/preview/${id}.${videoArgs[1]}`
     }
 
     return videoSrc
