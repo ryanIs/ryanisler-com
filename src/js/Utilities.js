@@ -17,6 +17,36 @@ export default {
 
   },
 
+  getAlbumDisplayName(albumName) {
+
+    if(albumName == 'FEATURED') {
+      return 'Featured'
+    }
+
+    return albumName
+
+  },
+
+  getAlbumImage(imageSrc, id) {
+
+    let imageArgs
+    
+    if(imageSrc == null) {
+      return ''
+    }
+
+    if(imageSrc.toUpperCase() == 'DEFAULT') {
+      return `/images/music/${id}/${id}.png`
+    }
+
+    else if((imageArgs = imageSrc.split('_'))[0] == 'DEFAULT') {
+      return `/images/music/${id}/${id}.${imageArgs[1]}`
+    }
+    
+    return imageSrc
+
+  },
+
   getGameSWFFile(gameSrc, id) {
     
     if(gameSrc == null) {
@@ -44,7 +74,7 @@ export default {
     }
 
     else if((imageArgs = imageSrc.split('_'))[0] == 'DEFAULT') {
-      return `url(/images/games/preview/${id}.${imageArgs[1]})`
+      return `/images/games/preview/${id}.${imageArgs[1]}`
     }
     
     return imageSrc

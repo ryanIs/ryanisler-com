@@ -25,6 +25,7 @@ function App(props) {
 
   // The main state for our application
   const [state, setState] = useState()
+  
   const [gamePreviewSoundEnabled, setGamePreviewSound] = useState(SOUND_DISABLED_STRING)
 
   const dataLoader = new DataLoader()

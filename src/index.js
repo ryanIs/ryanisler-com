@@ -5,6 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "react-jinke-music-player/assets/index.css";
 import './css/App.scss';
 
 // Render our application the the React DOM
