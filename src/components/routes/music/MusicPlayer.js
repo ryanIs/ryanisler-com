@@ -4,7 +4,7 @@ import ReactJkMusicPlayer from "react-jinke-music-player";
 const MusicPlayer = (props) => {
 
   return(
-    <div class="music-player-wrapper">
+    <div className="music-player-wrapper">
       <ReactJkMusicPlayer {...props.options} />,
     </div>
   )

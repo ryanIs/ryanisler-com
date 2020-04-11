@@ -27,23 +27,63 @@ export default {
 
   },
 
-  getAlbumImage(imageSrc, id) {
-
-    let imageArgs
+  /**
+   * Get the correct image corresponding to the song object
+   * @param {Object} imageObj Song Object taken from the music.json
+   * @returns {String} The best-fit image src. The priority is: SONG_IMAGE > ALBUM_IMAGE > null
+   */
+  getAlbumImage(imageObj) {
     
-    if(imageSrc == null) {
+    if(imageObj == null) {
       return ''
     }
 
-    if(imageSrc.toUpperCase() == 'DEFAULT') {
-      return `/images/music/${id}/${id}.png`
+    let imageArgs
+
+    let imageSrc = imageObj.image
+
+    let imageAlbumId = imageObj.albumId
+    
+    if(imageSrc == null && imageAlbumId == null) {
+      return ''
+    }
+
+    if(imageSrc == null || imageSrc.toUpperCase() == 'DEFAULT') {
+      return `/images/music/${imageAlbumId}/album-art.png`
     }
 
     else if((imageArgs = imageSrc.split('_'))[0] == 'DEFAULT') {
-      return `/images/music/${id}/${id}.${imageArgs[1]}`
+      return `/images/music/${imageAlbumId}/album-art.${imageArgs[1]}`
     }
     
     return imageSrc
+
+  },
+
+  getAlbumSongFile(songObj) {
+
+    let fileArgs
+
+    let fileSrc = songObj.file
+
+    let albumId = songObj.albumId
+
+    let songId = songObj.id
+
+    if(fileSrc == null) {
+      return `/music/${albumId}/${songId}.mp3`
+    }
+
+    if(fileSrc.toUpperCase() == 'DEFAULT') {
+      return `/music/${albumId}/${songId}.mp3`
+    }
+
+    // Unique file type
+    else if((fileArgs = fileSrc.split('_'))[0] == 'DEFAULT') {
+      return `/images/music/${albumId}/${songId}.${fileArgs[1]}`
+    }
+    
+    return fileSrc
 
   },
 
