@@ -1,4 +1,6 @@
 /**
+ * Background.js
+ * 
  * Background.js is in charge of animating the background. It attches to a canvas
  * element and creates circles which change colors as time continues.
  */
@@ -7,8 +9,8 @@ var FPS = 30;
 var MAX_CIRCLES = 180; // 256
 var MAX_CIRCLES_DEFAULT = 140;
 var CIRCLE_DIAMETER = 40;
-var CANVAS_WIDTH = 2000; // Must be actual canavs width & height
-var CANVAS_HEIGHT = 1200;
+var CANVAS_WIDTH = window.innerWidth; // Must be actual canavs width & height (2k,1.2k)
+var CANVAS_HEIGHT = window.innerHeight;
 var canvasBaseR = 220;
 var canvasBaseG = 220;
 var canvasBaseB = 220;
@@ -26,22 +28,69 @@ var circleAddTimer = 0;
 var circlesAdded = 0;
 var backgroundMode;
 
+/**
+ * Log to the console (short-hand).
+ * 
+ * @param {String} _ Output text to log.
+ * @returns Console.log return data.
+ */
 var cl = function(_) { return console.log(_); };
 
+/**
+ * Get a random number.
+ * 
+ * @param {Number} _ Get a random number from 0 up to _.
+ * @returns {Number} Random number.
+ */
 var random = function(_) { return Math.floor( Math.random() * _ ); };
 
+/**
+ * Initiate the index background canvas. (currently only the circles mode available)
+ * 
+ * @param {String} playMode Play mode of the background.
+ */
 function initCanvas(playMode = 'DEFAULT') {
   if(playMode != 'NONE') {
     setPlayMode(playMode)
 
-    canvas = document.getElementById("background-canvas"); console.log(canvas);
+    canvas = document.getElementById("background-canvas"); 
     ctx = canvas.getContext("2d"); 
+
+    // Handle size of canvas on init and resize
+    setCanvasWidthAndHeight(window.innerWidth, window.innerHeight)
+    window.addEventListener('resize', windowResizeHandler);
 
     initCircles();
 
   }
 }
 
+/**
+ * Window resize handler. Handles the adjustments of the canvas height and width 
+ * based on the window size.
+ */
+function windowResizeHandler() {
+  setCanvasWidthAndHeight(window.innerWidth, window.innerHeight)
+}
+
+/**
+ * Set the canvas width and height.
+ * 
+ * @param {Number} width New canvas width.
+ * @param {Number} height New canvas height.
+ */
+function setCanvasWidthAndHeight(width, height) {
+  CANVAS_WIDTH = width;
+  CANVAS_HEIGHT = height;
+  ctx.canvas.width  = width;
+  ctx.canvas.height = height;
+}
+
+/**
+ * Sets the play mode. Determines the number of MAX_CIRCLES to generate. 
+ * The LITE mode helps reduce CPU usage.
+ * @param {String} mode The mode (OPTIONS: 'LITE')
+ */
 function setPlayMode(mode) {
 
   mode = mode.toUpperCase()
@@ -53,6 +102,9 @@ function setPlayMode(mode) {
   backgroundMode = mode
 }
 
+/**
+ * Initiate the circles handler.
+ */
 function initCircles() {
   /*
   for(let i = 0; i < 0; i++) {
@@ -64,11 +116,18 @@ function initCircles() {
   circleInterval = setInterval(circlesHandler, Math.round(1000/FPS));
 }
 
+/**
+ * Unload the background.
+ */
 function unloadBG() {
   clearInterval(circleInterval)
+  window.removeEventListener('resize', windowResizeHandler)
 }
 
-// Updates circle every frame
+/**
+ * Update a circle instance.
+ * Runs every frame.
+ */
 function circleUpdateHandler() { 
 
   // Movement handling
@@ -158,6 +217,12 @@ function circleUpdateHandler() {
   this.render();
 }
 
+/**
+ * Move a circle to an X and Y coordinate.
+ * 
+ * @param {Number} destinationX X coordinate to move to.
+ * @param {Number} destinationY Y coordinate to move to.
+ */
 function circleMoveTo(destinationX, destinationY) {
   this.destX = destinationX;
   this.destY = destinationY;
@@ -166,14 +231,39 @@ function circleMoveTo(destinationX, destinationY) {
   this.idleTime = (FPS * 5) + (FPS * random(8));
 }
 
+/**
+ * Get a CSS rgb string.
+ * 
+ * @param {Number} red Red offset.
+ * @param {Number} green Green offset.
+ * @param {Number} blue Blue offset.
+ * @returns {String} RGB string.
+ */
 function rgb(red, green, blue) {
   return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
+/**
+ * Get a CSS rgba string.
+ * 
+ * @param {Number} red Red offset.
+ * @param {Number} green Green offset.
+ * @param {Number} blue Blue offset.
+ * @param {Number} alpha Alpha offset.
+ * @returns {String} RGBA string.
+ */
 function rgba(red, green, blue, alpha) {
   return "rgb(" + red + ", " + green + ", " + blue + ", " + alpha + ")";
 }
 
+/**
+ * Add a circle instance.
+ * 
+ * @param {Number} diameter The circle diameter.
+ * @param {Number} startX The initial X coordinate for the circle.
+ * @param {Number} startY The initial Y coordinate for the circle.
+ * @param {String} circleFillStyle The fill style for the circle.
+ */
 function addCircle(diameter, startX, startY, circleFillStyle) {
   var newCircleObject = {
     fillStyleUpdateRequired: false,
@@ -224,10 +314,11 @@ function addCircle(diameter, startX, startY, circleFillStyle) {
 
   circles.push(newCircleObject);
   newCircleObject.render();
-
-  return addCircle;
 }
 
+/**
+ * Draws a this circle on the canvas context.
+ */
 function drawCircle() {
   ctx.beginPath();
   //ctx.shadowColor = '#999';
@@ -237,6 +328,9 @@ function drawCircle() {
   ctx.fill();
 }
 
+/**
+ * Change the color of this circle to a random one.
+ */
 function changeColor() {
   
   canvasBaseR = random(256);
@@ -254,7 +348,10 @@ function changeColor() {
 
 }
 
-// Called every FPS times per second
+/**
+ * Handles redrawing, updating, color changes, and adding circles.
+ * Called every FPS times per second.
+ */
 function circlesHandler() {
 
   // clear canvas for redrawing
@@ -288,6 +385,9 @@ function circlesHandler() {
   
 }
 
+/**
+ * Clear the canvas content.
+ */
 function clearCtx() {
 
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);

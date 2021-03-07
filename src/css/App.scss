@@ -7,9 +7,13 @@
 
 // Components
 @import "../components/nav/nav";
+@import "../components/not-found/not-found";
+@import "../components/footer/footer";
 @import "../components/routes/index/index";
 @import "../components/routes/index/featured/featured";
 @import "../components/routes/index/featured/featuredItem/featured-item";
 @import "../components/routes/games/games";
 @import "../components/routes/games/game/game";
 @import "../components/routes/music/music";
+@import "../components/routes/art/art";
+@import "../components/routes/about/about";

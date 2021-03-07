@@ -1,0 +1,325 @@
+.art-wrapper {
+
+  & {
+    min-height: 100vh;
+  }
+
+  .all-art-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .art-object {
+    position: relative;
+    width: 25%;
+    max-height: 40vh;
+    // height: auto;
+    // height: 40vh;
+    // flex-grow: 1;
+    flex: 0 0 25%;
+    // border: 3px outset #b5e8ff;
+    overflow: hidden;
+    opacity: 1.0;
+    // background: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: opacity 1s;
+    
+    .art-link-a {
+      display: block;
+      width: 100%;
+      height: 40vh;
+    }
+
+    .art-name-overlay {
+      display: inline-flex;
+      // font-family: "Palatino Linotype", "Georgia";
+      // font-family: Arial;
+      font-weight: bold;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      z-index: 20;
+      opacity: 0;
+      // text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+      $artNameOverlayTextShadowColor: rgba(0, 0, 0, 0.5);
+      $artNameOverlayTextDistance: 3px;
+      text-shadow: (-$artNameOverlayTextDistance) (-$artNameOverlayTextDistance) 5px $artNameOverlayTextShadowColor,
+                   $artNameOverlayTextDistance (-$artNameOverlayTextDistance) 5px $artNameOverlayTextShadowColor,
+                   $artNameOverlayTextDistance $artNameOverlayTextDistance 5px $artNameOverlayTextShadowColor,
+                   (-$artNameOverlayTextDistance) $artNameOverlayTextDistance 5px $artNameOverlayTextShadowColor;
+      font-size: 2em;
+      // color: black;
+      color: #ffffff;
+      // letter-spacing: 1.2px;
+      // font-weight: bold;
+
+      transition: opacity 0.3s linear;
+    }
+
+
+
+    // .art-name-overlay::before {
+    // //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background: black;
+    // //   // background-attachment: fixed;
+    //   -webkit-filter: blur(12px);
+    //   filter: blur(12px);
+    // }
+
+    img {
+      max-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+
+      // transition: max-height 15s ease-in-out, min-width 15s ease-in-out; // lol ... Kind of looks cool
+    }
+
+  }
+
+  .art-object:hover {
+    opacity: 0.7;
+  }
+
+  .art-object:hover img {
+    // max-height: 350%;
+    // min-width: 350%;
+  }
+
+}
+
+// Art Route
+.art-route-wrapper {
+
+  & {
+    min-height: 100vh;
+  }
+
+  .art-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .art-container a, .art-container a:visited {
+    cursor: zoom-in;
+  }
+
+  h1 {
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 2em;
+    padding: 10px 0 0;
+    margin: 0
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 0.7em;
+    padding: 0 0 14px;
+    margin: 0;
+    color: #aaa;
+    letter-spacing: 2px;
+  }
+
+  .art-container img {
+    display: block;
+    // width: auto;
+    // max-width: 85vw;
+    // max-height: 100%;
+    // height: 80vh;
+
+    // display: block;
+    max-width: 85vw;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+
+    // width: 100%;
+    // height: auto;
+    // min-height: 400px;
+    // border: 1px solid #e9f8ff;
+    // box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px 1px #e0e0e0;
+
+    // transition: box-shadow 2s;
+    opacity: 1;
+
+    animation: artLanding 0.5s ease-out;
+  }
+
+  @keyframes artLanding {
+    0% {
+      transform: scale(1.04, 1.04);
+      box-shadow: 0 0 40px 1px #e2d8d8;
+      opacity: 0.8;
+    }
+
+    100% {
+      transform: scale(1, 1);
+      height: auto;
+      box-shadow: 0 0 3px 1px #e0e0e0;
+      opacity: 1;
+    }
+  }
+  
+  .main-art-description-wrapper {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+  }
+
+  .main-art-description-wrapper p {
+    // background: #e9f8ff;
+    color: #2f2f2f;
+    padding: 15px;
+    padding-top: 25px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border-top: 4px double #dcfaff;
+    // background-color: #f8feff;
+    letter-spacing: 1px;
+    line-height: 35px;
+
+    animation: descriptionBorderTopColor 2s;
+  }
+  @keyframes descriptionBorderTopColor {
+    0% {
+      border-top: 4px double #ffffff;
+    }
+
+    40% {
+      border-top: 4px double #ffffff;
+    }
+
+    100% {
+      border-top: 4px double #dcfaff;
+    }
+  }
+
+  .main-art-back-button {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    font-size: 1.3em;
+    user-select: none;
+    color: #808080;
+    font-weight: bold;
+    // text-shadow: 2px 2px 2px rgb(223, 221, 221);
+    background: #fafafa;
+    // background-image: url('../../../img/hypercube.png');
+    background-size: 35px 35px;
+    border: 2px solid #f8f8f8;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .main-art-back-button:hover {
+    opacity: 0.7;
+  }
+
+}
+
+/* tablet breakpoint */
+@media screen and (max-width: 1024px) {
+  
+
+  .art-wrapper {
+
+    .art-object {
+      width: 100%;
+      max-height: 400px;
+      flex: 0 0 50%;
+
+      
+    
+      .art-link-a {
+        display: block;
+        width: 100%;
+        height: 400px;
+      }
+      
+      .art-name-overlay {
+        font-size: 1.6em;
+      }
+
+    }
+  }
+
+  
+  .art-route-wrapper {
+
+    .art-container {
+      // display: flex;
+      // justify-content: center;
+    }
+
+    .art-container img {
+      width: auto;
+      max-height: 100vh;
+      box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.3);
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .art-route-wrapper {
+    .main-art-wrapper {
+      padding-top: 50px; 
+    }
+  }
+}
+
+/* mobile (portrait) breakpoint */
+@media screen and (max-width: 479px) {
+  
+  .art-wrapper {
+
+    .art-object {
+      width: 100%;
+      max-height: 400px;
+      flex: 0 0 100%;
+      
+      .art-link-a {
+        display: block;
+        width: 100%;
+        height: 400px;
+      }
+      
+      // .art-name-overlay {
+        // display: inline-flex;
+        // position: absolute;
+        // width: 100%;
+        // height: 100%;
+        // text-align: center;
+        // align-items: initial;
+        // justify-content: center;
+        // left: 0;
+        // z-index: 20;
+        // opacity: 1;
+        // text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+        // font-size: 2em;
+        // color: black;
+        // letter-spacing: 2px;
+
+        // transition: opacity 0.3s linear;
+      // }
+
+    }
+    
+  }
+
+}

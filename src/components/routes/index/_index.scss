@@ -7,15 +7,55 @@
 .route-index {
 
   & {
-    
+    margin-bottom: 160px;
   }
 
+  /* misc */
+
+  .sound-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 45px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.2;
+    border-radius: 20px;
+    cursor: pointer;
+    animation: soundBtnFadeIn 5s ease-out;
+  }
+
+  .sound-btn-wrapper:hover {
+    opacity: 0.4;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes soundBtnFadeIn {
+    0% {
+      top: 0;
+      opacity: 0.0;
+    }
+    33% {
+      top: 0;
+      opacity: 0.0;
+    }
+    100% {
+      opacity: 0.2;
+      top: 45px;
+    }
+  }
+
+  .sound-icon {
+    width: 70%;
+    height: 70%;
+  }
 
 
   /* ==========================================================================
                                     Banner
    ========================================================================== */
-
 
   .banner-wrapper {
     width: 100%;
@@ -36,7 +76,7 @@
     0% {
       opacity: 0;
     }
-    30% {
+    20% {
       opacity: 0;
       letter-spacing: 1px;
 
@@ -62,7 +102,6 @@
   /* ==========================================================================
                                 Background (canvas)
    ========================================================================== */
-
 
   .background-wrapper {
     width: 100vw;
@@ -91,8 +130,8 @@
     margin: 0 auto;
     width: inherit;
     height: inherit;
-    background: #fff;
-    animation: changeBackground 4s ease-out;
+    // background: #fff;
+    // animation: changeBackground 4s ease-out;
   }
 
   @keyframes changeBackground {
@@ -101,6 +140,112 @@
     }
     100% {
       background: #fafafa;
+    }
+  }
+
+}
+
+.hypercube-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  z-index: -200;
+}
+
+/* stop mobile from being able to tap it and view it in video player mode */
+.hypercube-video-container,
+.hypercube-video-container video {
+  pointer-events: none;
+}
+
+.banner-hypercube-video-wrapper {
+  // width: 200px;
+  // height: 100%;
+  position: absolute;
+  left: 40vw;
+  top: 60px;
+  opacity: 0.5;
+  transition: opacity 1s, width 7s ease-out, height 7s ease-out;
+  animation: hypercubeVideoFadeIn 5s ease-out;
+}
+
+@keyframes hypercubeVideoFadeIn {
+  0% {
+    opacity: 0.0;
+    top: 0;
+  }
+  33% {
+    opacity: 0.0;
+    top: 0;
+  }
+  100% {
+    opacity: 0.5;
+    top: 60px;
+  }
+}
+
+.banner-hypercube-video-wrapper video {
+  min-width: 100%;
+  min-height: 100%;
+  width: inherit;
+  height: inherit;
+  animation: hypercubeVideoObjAnimation 5s ease-out;
+}
+
+@keyframes hypercubeVideoObjAnimation {
+  0% {
+  }
+  33% {
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+// @media screen and (max-width: 1024px) {
+// }
+  @media screen and (max-width: 768px) {
+  
+  .route-index {
+
+    .banner-header {
+      padding-top: 28vh;
+      font-size: 60px;
+    }
+    
+    .banner-main {
+      // width: auto;
+      // height: 180px;
+      span {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .banner-main-image-container {
+      width: 100%;
+    }
+
+    .banner-main img {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-height: 479px) {
+    .route-index {
+
+      .banner-header {
+        padding-top: 15vh;
+      }
     }
   }
 

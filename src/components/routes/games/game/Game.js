@@ -1,5 +1,11 @@
 import React, { useState, useEffect} from 'react'
 import { Link } from "react-router-dom"
+/**
+ * Game.js
+ * 
+ * This is a game component that is populated on the main games page.
+ */
+
 import utils from '../../../../js/Utilities'
 
 // TODO: Add this to a (global) React.Context
@@ -7,6 +13,12 @@ const SOUND_ENABLED_STRING = 'sound-enabled'
 const SOUND_DISABLED_STRING = 'sound-disabled'
 
 
+/**
+ * Main game component.
+ * 
+ * @param {Object} props Properties passed by parent.
+ * @returns {JSX} Render JSX.
+ */
 function Game(props) {
 
   useEffect(() => {
@@ -20,8 +32,8 @@ function Game(props) {
   const videoWrapperRef = React.createRef()
   const gameContentRef = React.createRef()
 
+  // Opacity for the game video
   const VIDEO_NOT_PLAYING_STYLE = '0.0'
-
   const VIDEO_PLAYING_STYLE = '1.0'
 
   const releaseDate = utils.getReleaseDate(props.game.releaseDate)
@@ -36,16 +48,20 @@ function Game(props) {
   // Sets game video
   const gameVideo = utils.getGameVideo(props.game.video, props.game.id)
 
-  const gameSoundBtnStyle = (props.game.video == null) ?
-    {display: 'none'} : {}
+  const gameSoundBtnStyle = (props.game.video == null) ? {display: 'none'} : {}
 
-
+  /**
+   * Update the video mute status based on the soundEnabled prop.
+   */
   const updateSoundMuted = () => {
     if(videoRef.current != null) {
       videoRef.current.muted = (props.soundEnabled == SOUND_ENABLED_STRING) ? false : true
     }
   }
 
+  /**
+   * Begin the game video and make the video visible.
+   */
   const beginGameVideo = () => {
 
     gameContentRef.current.style.opacity = VIDEO_PLAYING_STYLE
@@ -60,6 +76,9 @@ function Game(props) {
 
   }
 
+  /**
+   * Hide the game video.
+   */
   const hideGameVideo = () => {
 
     gameContentRef.current.style.opacity = VIDEO_NOT_PLAYING_STYLE
@@ -93,21 +112,26 @@ function Game(props) {
         ) : null
       }
 
-      <Link className='game-link-a' to={`/games/${props.game.id}`}>
+      <div className='game-container-wrapper'>
         <div className='game-container' ref={gameContentRef}>
 
-          <div className='game-platform'><img src={gameIcon} /></div>
+        <Link className='game-link-a' to={`/games/${props.game.id}`}>
+          <div className='game-container-b'>
 
-          <h1>{props.game.title}</h1>
-          <h2>{releaseDate}</h2>
-          <h3>{props.game.descriptionShort}</h3>
-          
-          <div className='game-sound-button-wrapper' onClick={(mouseEvent) => {props.toggleGameSound(mouseEvent); }} style={gameSoundBtnStyle}>
-            <div className={props.soundEnabled} />
+            <div className='game-platform'><img src={gameIcon} /></div>
+
+            <h1>{props.game.title}</h1>
+            <h2>{releaseDate}</h2>
+            <h3>{props.game.descriptionShort}</h3>
           </div>
+        </Link>
+            
+        <div className='game-sound-button-wrapper' onClick={(mouseEvent) => {props.toggleGameSound(mouseEvent); }} style={gameSoundBtnStyle}>
+          <div className={props.soundEnabled} />
+        </div>
 
         </div>
-      </Link>
+      </div>
 
     </div>
   )

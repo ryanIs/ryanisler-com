@@ -1,0 +1,183 @@
+.footer-wrapper {
+
+  .ryan-isler-text {
+    cursor: pointer;
+    transition: color 1s;
+  }
+
+  .ryan-isler-text:hover {
+    color: #0000a0;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    min-height: 63px;
+    background: #e9f8ff;
+    // margin-top: 80px;
+
+    .footer-p {
+      display: block;
+      margin:  0 0 0  26px;
+      font-size: 0.8em;
+      color: #757575;
+      padding-top: 23px;
+
+      .text-divider {
+        border-left: 1px solid #88cad3;
+        margin-left: 20px;
+      }
+
+      a {
+        margin-left: 20px;
+      }
+
+      a, a:visited {
+        // color: #53ffff;
+        opacity: 0.5;
+        transition: opacity 1s;
+      }
+
+      a:hover {
+        opacity: 0.9;
+      }
+    }
+    
+    .footer-twitter-wrapper {
+      position: relative;
+    }
+
+    .footer-twitter-wrapper:hover .twitter-wrapper {
+      display: block;
+    }
+
+    .twitter-wrapper {
+      z-index: 490;
+      position: absolute;
+      width: 280px;
+      left: 0;
+      bottom: 13px;
+      padding-bottom: 25px;
+      // box-shadow: 0px -2px 2px 1px rgba(0, 0, 0, 0.2);
+      display: none;
+      opacity: 1;
+
+      animation: twitterWrapperShow 0.7s;
+    }
+
+    @keyframes twitterWrapperShow {
+      0% {
+        opacity: 0.0;
+        padding-bottom: 0px;
+      }
+      100% {
+        opacity: 1;
+        padding-bottom: 25px;
+      }
+    }
+
+    .twitter-wrapper-b {
+      width: 280px;
+      height: inherit;
+      // max-height: 350px;
+      // box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px -2px 2px 1px rgba(0, 0, 0, 0.2);
+
+      border-radius: 5px;
+    }
+
+    #footer-tesseract-link {
+      position: absolute; 
+      width: 60px;
+      height: 60px;
+      top: 0;
+      right: 30px;
+      overflow: hidden;
+    }
+
+    .footer-video-wrapper {
+      width: 52px;
+      margin-top: 5px;
+      background: #e9f8ff;
+      background-color: #e9f8ff;
+      opacity: 0.4;
+      transition: opacity 2s;
+
+      cursor: pointer;
+    }
+
+    .footer-video-wrapper:hover {
+      opacity: 1;
+    }
+
+    .footer-video-wrapper video {
+      width: inherit;
+      height: inherit;
+      pointer-events: none;
+    }
+
+    #footer-tesseract-link {
+      cursor: default;
+    }
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    .footer {
+      .footer-p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        align-items: center;
+        padding: 15px 0;
+        // flex: 6 1;
+        
+        $elementPaddingBottom: 5px;
+          
+        a {
+          margin: 0;
+          // display: block;
+          margin-bottom: $elementPaddingBottom;
+        }
+        .twitter-wrapper {
+          left: -100px; 
+        }
+
+        .ryan-isler-text {
+          order: 6;
+        }
+
+        span {
+          // margin: 0;
+          // max-width: 100px;
+          // display: block;
+          margin-bottom: $elementPaddingBottom;
+        }
+
+        .text-divider {
+          display: none;
+        }
+      }
+
+      $footerTesseractSide: 120px;
+      $footerTesseractPushDown: 27px;
+
+      #footer-tesseract-link {
+        width: $footerTesseractSide;
+        height: $footerTesseractSide + $footerTesseractPushDown;
+        bottom: 0;
+        right: 10px;
+      }
+      
+      .footer-video-wrapper {
+        width: $footerTesseractSide;
+        height: $footerTesseractSide;
+        margin-top: $footerTesseractPushDown;
+      }
+      
+    }
+  }
+}

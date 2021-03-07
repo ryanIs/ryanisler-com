@@ -28,3 +28,11 @@ src/index-old.html
 
 /public/games
 /public/music
+/public/json
+/public/images
+/node_modules-old
+
+desktop.ini
+/node_modules_old
+/package-lock_new.json
+/.eslintcache

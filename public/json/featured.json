@@ -1,27 +1,33 @@
-[
-  {
-    "type": "Game",
-    "title": "Stone King IV",
-    "id": "Stone King III",
-    "released": false,
-    "releaseDate": "2021-1-1",
-    "genre": "Role-playing game",
-    "platform": "Desktop, Web, Unity",
-    "description": "Coming Janurary 1st 2021.",
-    "featuredImage": "../images/featured/sk4.jpg",
-    "site": null
-  },
+{
+  "featured": [
+    {
+      "type": "Game",
+      "title": "Stone King IV",
+      "id": "stone-king-iv",
+      "released": false,
+      "releaseDate": "2020-10-02",
+      "genre": "Role-playing game",
+      "platform": "Desktop, Web, Unity",
+      "description": "Coming soon!",
+      "featuredImage": "../images/featured/sk4.jpg",
+      "featuredYouTubeId": null,
+      "featuredAudioFile": null,
+      "site": null
+    },
 
-  {
-    "type": "Game",
-    "title": "Stone King III",
-    "id": "Stone King III",
-    "released": true,
-    "releaseDate": "2014-10-9",
-    "genre": "Role-playing game",
-    "platform": "Desktop, Web, Flash",
-    "description": "Explore the unknown territory of the Kingdom of Darkness. Become a powerful fighter! Earn gold and make special equipment through your skills and completling unique quests.",
-    "featuredImage": "../images/featured/sk3.jpg",
-    "site": "../games/stone-king-iii/"
-  }
-]
+    {
+      "type": "Game",
+      "title": "Stone King III",
+      "id": "stone-king-iii",
+      "released": true,
+      "releaseDate": "2014-10-09",
+      "genre": "Role-playing game",
+      "platform": "Desktop, Web, Flash",
+      "description": "Explore the unknown territory of the Kingdom of Darkness. Become a powerful fighter! Earn gold and make special equipment through your skills and completling unique quests.",
+      "featuredImage": "../images/featured/sk3.jpg",
+      "featuredYouTubeId": null,
+      "featuredAudioFile": null,
+      "site": "../games/stone-king-iii"
+    }
+  ]
+}

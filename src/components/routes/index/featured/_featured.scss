@@ -1,13 +1,9 @@
 .featured-wrapper {
-
-  & {
-
-  }
   
   .featured-items {
     display: block;
     margin: 0 auto;
-    border: 2px solid #eef;
+    border: 1px solid #e9f8ff;
     border-radius: 5px;
     width: auto;
     max-width: 1000px;
@@ -17,6 +13,7 @@
 
   .featured-items-header {
     margin-top: 15px;
+    border-bottom: 1px solid #f9f9f9;
   }
 
   .featured-items-header h1 {

@@ -5,7 +5,6 @@
  * On the INDEX page, there is an animation.
  */
 
-
 .navbar-spacing {
   width: 100%;
   height: $navbarHeight;
@@ -13,11 +12,9 @@
 
 .navbar-wrapper {
 
-
   /* ==========================================================================
                           Navigation bar (bootstrap)
    ========================================================================== */
-
 
   .navbar {
     padding: 0 10px;
@@ -25,9 +22,10 @@
     border-radius: 0px;
     width: 100%; 
     position: fixed; 
-    z-index: 10; 
+    z-index: 500; 
     background: linear-gradient(#ddf, #bbf );
-    background: #eaeaff;
+    // background: #eaeaff;
+    background: #e9f8ff;
 
     background-image: url('../../img/bg-highlight.png');
     background-repeat: repeat-x;
@@ -48,6 +46,7 @@
 
   .navbar .navbar-brand  {
     color: #000;
+    margin-right: 0;
   } 
   
   .navbar-brand .header-hypercube {
@@ -88,7 +87,6 @@
 
   .navbar .navbar-nav > ul > li > a:hover {
     background-color: rgba(255,255,255,0.3);
-    
   }
 
   .blue {
@@ -124,9 +122,14 @@
   /* Navigation fade-in
    ========================================================================== */
 
-  .navbar-fade-in {
+   .navbar-fade-in {
     opacity: 1;
     animation: nav-intro 6s;
+  }
+
+  .navbar-fade-in-fast {
+    opacity: 1;
+    animation: nav-intro 1s;
   }
 
   @keyframes nav-intro {
@@ -141,4 +144,95 @@
     }
   }
 
+  .navbar-mobile-dropdown {
+    display: none;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #00f;
+    border-radius: 3px;
+    cursor: pointer;
+    clear: both;
+    float: right;
+  }
+
+  .navbar-mobile-dropdown:hover {
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0.8;
+  }
+
+  .navbar-line {
+    border-top: 1px solid #00f;
+    width: 70%;
+    left: 15%;
+    height: 1px;
+    position: relative;
+    display: block;
+  }
+
+  .navbar-line:nth-child(1) {
+    top: 23%
+  }
+  .navbar-line:nth-child(2) {
+    top: 46%
+  }
+  .navbar-line:nth-child(3) {
+    top: 69%
+  }
+
+  
+}
+
+/* mobile viewport */
+@media screen and (max-width: 550px) {
+  .navbar-wrapper {
+
+    .navbar {
+      display: block;
+    }
+
+    .navbar-mobile-dropdown {
+      margin: 6px 0;
+    }
+
+    .navbar-nav .navbar-right {
+      float: left;
+    }
+
+    .navbar-links {
+      display: none;
+    }
+
+    .navbar-opened .navbar-links {
+      display: block;
+    }
+
+    .navbar-mobile-dropdown {
+      display: block;
+    }
+    .navbar .navbar-nav > ul {
+      // display: none;
+    }
+  
+    .navbar .navbar-nav > ul > li {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .navbar .navbar-nav > ul > li > a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      width: 100%;
+      border-top: 1px solid lightblue;
+    }
+    
+    .navbar-line-graphic {
+      display: block;
+    }
+  
+    // .navbar .navbar-nav > ul > li > a:hover {
+    //   background-color: rgba(255,255,255,0.3);
+    // }
+
+  }
 }

@@ -1,3 +1,4 @@
+
 {
   "Role-playing": [
     {
@@ -18,8 +19,7 @@
         "gameFileWidth": 550,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     },
     {
       "title": "Stone King II",
@@ -39,8 +39,7 @@
         "gameFileWidth": 550,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     },
     {
       "title": "Stone King",
@@ -60,8 +59,7 @@
         "gameFileWidth": 550,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     }
   ],
   "Action": [
@@ -83,8 +81,7 @@
         "gameFileWidth": 640,
         "gameFileHeight": 480,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     }
   ],
   "Arcade": [
@@ -106,8 +103,7 @@
         "gameFileWidth": 550,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     },
     {
       "title": "Terry",
@@ -127,8 +123,7 @@
         "gameFileWidth": 550,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     },
     {
       "title": "Tic Tac Toe",
@@ -148,8 +143,7 @@
         "gameFileWidth": 550,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     }
   ],
   "Puzzle": [
@@ -171,8 +165,7 @@
         "gameFileWidth": 650,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     }
   ],
   "Strategy": [
@@ -194,19 +187,18 @@
         "gameFileWidth": 550,
         "gameFileHeight": 400,
         "headerImage": "DEFAULT"
-      },
-      "extras": {}
+      }
     }
   ],
   "UPCOMING": {
     "title": "Dungeon Escape 2",
     "id": "dungeon-escape-2",
     "released": false,
-    "releaseDate": "2019-12-27",
+    "releaseDate": "2020-08-07",
     "genre": "Arcade",
     "platform": "Desktop, Web, Unity",
     "description": "Dungeon Escape 2 is a thrilling arcade game with intense shoot-em-up style gameplay.",
-    "descriptionShort": "Coming December 27st 2019",
+    "descriptionShort": "Coming July 7th 2020",
     "image": "/images/games/upcoming-banner.gif",
     "backgroundImage": "/images/games/upcoming-background.png",
     "site": null,
@@ -217,7 +209,6 @@
       "gameFileWidth": 550,
       "gameFileHeight": 400,
       "headerImage": "DEFAULT"
-    },
-    "extras": {}
+    }
   }
 }

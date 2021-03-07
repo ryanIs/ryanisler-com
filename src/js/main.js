@@ -1,5 +1,16 @@
+/**
+ * main.js
+ * 
+ * @depricated
+ * 
+ * This JavaScript files was used to load objects from 
+ * the featured.json file and add them to the DOM.
+ */
+
+// Log _ to the console
 var cl = function(_) { return console.log(_); };
 
+// Get a random number up to _.
 var random = function(_) { return Math.floor( Math.random() * _ ); };
 
 var introSound;
@@ -13,7 +24,9 @@ $(document).ready(function() {
     createFeatured();
 });
 
-// Plays the intro soundtrack
+/**
+ * Plays the intro soundtrack.
+ */
 function playSound() {
     /*
     introSound = new Audio("../media/intro.mp3")
@@ -29,7 +42,9 @@ function playSound() {
     */
 }
 
-// Loads featured objects from the featured.json file
+/**
+ * Loads featured objects from the featured.json file.
+ */
 function createFeatured() {
 
     loadJSON(FEATURED_JSON, function(objectData) {

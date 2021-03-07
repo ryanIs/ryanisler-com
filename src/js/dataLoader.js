@@ -14,12 +14,14 @@ class DataLoader {
   FEATURED_JSON = "FEATURED"
   GAMES_JSON = "GAMES"
   MUSIC_JSON = "MUSIC"
+  JAMS_JSON = "JAMS";
   ART_JSON = "ART"
   RANDOM_JSON = "RANDOM";
 
   FEATURED_URL = "/json/featured.json"
   GAMES_URL = "/json/games.json"
   MUSIC_URL = "/json/music.json"
+  JAMS_URL = "/json/jams.json"
   ART_URL = "/json/art.json"
   RANDOM_URL = "/json/random.json"
 
@@ -31,7 +33,11 @@ class DataLoader {
 
   /**
    * Fetches data from (same domain) json file.
-   * The _next_ time this is called, it will INSTANTLY return the data
+   * The _next_ time this is called, it will INSTANTLY return the data.
+   * 
+   * @param {String} type JSON type.
+   * @param {Function} callback Callback that fires after the JSON has been loaded.
+   * @returns {Object} JSON data used for main site content.
    */
   getData(type = this.FEATURED_JSON, callback = null) {
 
@@ -67,8 +73,18 @@ class DataLoader {
       }
     } 
 
+    else if(type == this.JAMS_JSON) {
+      JSONUrl = this.JAMS_URL;
+      if(this.jams != null) {
+        if(callback != null) {
+          callback(this.jams)
+        }
+        return this.jams
+      }
+    } 
+
     else if(type == this.ART_JSON) {
-      JSONUrl = this.FEATURED_ART_URLURL;
+      JSONUrl = this.ART_URL;
       if(this.art != null) {
         if(callback != null) {
           callback(this.art)
@@ -92,8 +108,8 @@ class DataLoader {
     .then(response => (response.json()))
     .then(response => {
 
-      console.log('Fetch successs:');
-      console.log(response);
+      // console.log('Fetch successs:');
+      // console.log(response);
 
       if(type == this.FEATURED_JSON) {
         this.featured = response;
@@ -105,6 +121,8 @@ class DataLoader {
         this.art = response;
       } else if(type == this.RANDOM_JSON) {
         this.random = response;
+      } else if(type == this.JAMS_JSON) {
+        this.jams = response;
       }
 
       if(callback != null) {

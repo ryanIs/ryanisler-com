@@ -1,3 +1,10 @@
+/**
+ * Game.js
+ * 
+ * This is the game route for the website. Games are loaded in 
+ * through games.json and displayed dynamically here.
+ */
+
 import React, { useState, useEffect } from 'react'
 import Game from './game/Game'
 import utils from '../../../js/Utilities'
@@ -12,17 +19,33 @@ const GENRES_ICONS = {
 
 const UPCOMING_GENRE = 'UPCOMING'
 
+/**
+ * Main games component.
+ * 
+ * @param {Object} props Properties passed by parent.
+ * @returns {JSX} Render JSX.
+ */
 function Games(props) {
 
   // All genres and game data. Gets set async.
   const [gameGenres, setGenres] = useState()
 
-  // (async) when loaded, add the upcoming content to the DOM.
+  // (async) When loaded, add the upcoming content to the DOM.
   const [upcomingStyles, setUpcomingStyles] = useState({
     upcomingStyle: {},
     videoJSX: <span className='upcoming-video-empty'></span>
   })
 
+  useEffect(() => {
+    utils.setDocumentTitle('Ryan Isler - Games')
+    utils.initRoute()
+  }, [])
+
+  /**
+   * Display the games data.
+   * 
+   * @param {Object} data Input games data from games.json
+   */
   const displayGamesData = (data) => {
   if(gameGenres == null) {
 
